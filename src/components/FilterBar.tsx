@@ -41,7 +41,7 @@ export default function FilterBar({
             className={`relative px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
               selectedCategory === category.value
                 ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/25 scale-105"
-                : "bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-white hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-orange-300 dark:hover:border-orange-500"
+                : "bg-white dark:bg-gray-800 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-orange-300 dark:hover:border-orange-500"
             }`}
           >
             {selectedCategory === category.value && (
@@ -58,7 +58,7 @@ export default function FilterBar({
         className={`relative flex items-center space-x-3 px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
           showingFavorites
             ? "bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg shadow-pink-500/25"
-            : "bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-white hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-pink-300 dark:hover:border-pink-500"
+            : "bg-white dark:bg-gray-800 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-pink-300 dark:hover:border-pink-500"
         }`}
       >
         {showingFavorites && (

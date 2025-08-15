@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Recipe } from "@/types/recipe";
 import { RecipeAPI } from "@/lib/api";
 import { useFavorites } from "@/hooks/useFavorites";
+import { useTheme } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
@@ -22,6 +23,7 @@ export default function Home() {
   const [hasSearched, setHasSearched] = useState(false);
 
   const { favorites, isLoaded: favoritesLoaded } = useFavorites();
+  const { isLoaded: themeLoaded } = useTheme();
 
   // Filter recipes based on category
   useEffect(() => {
@@ -122,8 +124,17 @@ export default function Home() {
     setSelectedRecipe(null);
   };
 
+  // Don't render until theme is loaded to prevent flash
+  if (!themeLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-all duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-orange-100 via-red-50 to-yellow-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-all duration-300">
       <Header />
 
       <main className="container mx-auto px-4 py-8">

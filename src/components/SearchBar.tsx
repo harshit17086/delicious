@@ -25,7 +25,7 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
   return (
     <div className="w-full max-w-4xl mx-auto mb-12">
       <form onSubmit={handleSubmit} className="relative">
-        <div className="flex flex-col lg:flex-row gap-4 p-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-orange-100 dark:border-gray-700">
+        <div className="flex flex-col lg:flex-row gap-4 p-6 bg-white dark:bg-gray-800 backdrop-blur-lg rounded-3xl shadow-2xl border border-orange-100 dark:border-gray-700">
           {/* Search Input */}
           <div className="flex-1 relative">
             <div className="absolute left-4 top-1/2 transform -translate-y-1/2">

@@ -27,7 +27,7 @@ export default function RecipeCard({ recipe, onClick }: RecipeCardProps) {
 
   return (
     <div
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 overflow-hidden"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 overflow-hidden border border-gray-100 dark:border-gray-700"
       onClick={handleCardClick}
     >
       <div className="relative">

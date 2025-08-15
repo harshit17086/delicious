@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Header() {
   const { theme, toggleTheme, isLoaded } = useTheme();
@@ -10,7 +10,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-xl border-b border-orange-200 dark:border-gray-700 mb-12 sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 backdrop-blur-lg shadow-xl border-b border-orange-200 dark:border-gray-700 mb-12 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
