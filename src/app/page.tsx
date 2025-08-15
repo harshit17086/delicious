@@ -32,10 +32,12 @@ export default function Home() {
 
     const filtered = recipes.filter(
       (recipe) =>
-        recipe.strCategory
-          .toLowerCase()
-          .includes(selectedCategory.toLowerCase()) ||
-        recipe.strMeal.toLowerCase().includes(selectedCategory.toLowerCase())
+        (recipe.strCategory?.toLowerCase() || "").includes(
+          selectedCategory.toLowerCase()
+        ) ||
+        (recipe.strMeal?.toLowerCase() || "").includes(
+          selectedCategory.toLowerCase()
+        )
     );
     setFilteredRecipes(filtered);
   }, [recipes, selectedCategory, showingFavorites, favorites]);
