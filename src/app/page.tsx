@@ -233,10 +233,10 @@ export default function Home() {
                 </div>
                 <p className="text-orange-700 dark:text-orange-300">
                   Try searching for{" "}
-                  <span className="font-semibold">"chicken"</span>,{" "}
-                  <span className="font-semibold">"pasta"</span>, or{" "}
-                  <span className="font-semibold">"chocolate"</span> to discover
-                  delicious recipes!
+                  <span className="font-semibold">&ldquo;chicken&rdquo;</span>,{" "}
+                  <span className="font-semibold">&ldquo;pasta&rdquo;</span>, or{" "}
+                  <span className="font-semibold">&ldquo;chocolate&rdquo;</span>{" "}
+                  to discover delicious recipes!
                 </p>
               </div>
             </div>
