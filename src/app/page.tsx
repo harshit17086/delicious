@@ -121,7 +121,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-all duration-300">
       <Header />
 
       <main className="container mx-auto px-4 py-8">
@@ -159,26 +159,57 @@ export default function Home() {
             </div>
           </div>
         ) : !hasSearched ? (
-          <div className="text-center py-16">
-            <div className="max-w-md mx-auto">
-              <div className="text-6xl mb-6">🍳</div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Welcome to Recipe Finder
+          <div className="text-center py-20">
+            <div className="max-w-2xl mx-auto">
+              {/* Animated food icons */}
+              <div className="flex justify-center space-x-4 mb-8 text-6xl">
+                <span className="animate-bounce delay-100">🍳</span>
+                <span className="animate-bounce delay-200">🥗</span>
+                <span className="animate-bounce delay-300">🍰</span>
+              </div>
+              
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6">
+                Welcome to Delicious
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
-                Search for delicious recipes by name or ingredient, filter by
-                meal type, or browse your favorites.
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
+                Discover amazing recipes from around the world! Search by name or ingredient, 
+                filter by meal type, or explore your personal favorites collection.
               </p>
-              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                <p className="text-blue-800 dark:text-blue-200 text-sm">
-                  💡 Try searching for "chicken", "pasta", or "chocolate" to get
-                  started!
+              
+              {/* Feature cards */}
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="text-3xl mb-3">🔍</div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Smart Search</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Find recipes by name or ingredient with our intelligent search</p>
+                </div>
+                
+                <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="text-3xl mb-3">🏷️</div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Categories</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Browse by meal type, cuisine, or dietary preferences</p>
+                </div>
+                
+                <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 border border-orange-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="text-3xl mb-3">❤️</div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Favorites</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Save and organize your favorite recipes for later</p>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 backdrop-blur-sm border border-orange-200 dark:border-orange-800 rounded-2xl p-6 shadow-lg">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <span className="text-2xl">💡</span>
+                  <h4 className="font-semibold text-orange-800 dark:text-orange-200">Get Started</h4>
+                </div>
+                <p className="text-orange-700 dark:text-orange-300">
+                  Try searching for <span className="font-semibold">"chicken"</span>, <span className="font-semibold">"pasta"</span>, or <span className="font-semibold">"chocolate"</span> to discover delicious recipes!
                 </p>
               </div>
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredRecipes.map((recipe, index) => (
               <div
                 key={recipe.idMeal}
@@ -193,16 +224,26 @@ export default function Home() {
 
         {/* Show recipe count */}
         {hasSearched && filteredRecipes.length > 0 && (
-          <div className="text-center mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <p className="text-gray-600 dark:text-gray-400">
-              {showingFavorites
-                ? `Showing ${filteredRecipes.length} favorite recipe${
-                    filteredRecipes.length !== 1 ? "s" : ""
-                  }`
-                : `Found ${filteredRecipes.length} recipe${
-                    filteredRecipes.length !== 1 ? "s" : ""
-                  }`}
-            </p>
+          <div className="text-center mt-12 pt-8 border-t border-orange-200 dark:border-gray-700">
+            <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto border border-orange-200 dark:border-gray-700 shadow-lg">
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  {showingFavorites ? 'Favorites Collection' : 'Search Results'}
+                </span>
+              </div>
+              <p className="text-orange-600 dark:text-orange-400 font-medium">
+                {showingFavorites
+                  ? `${filteredRecipes.length} favorite recipe${
+                      filteredRecipes.length !== 1 ? "s" : ""
+                    } saved`
+                  : `${filteredRecipes.length} delicious recipe${
+                      filteredRecipes.length !== 1 ? "s" : ""
+                    } found`}
+              </p>
+            </div>
           </div>
         )}
       </main>

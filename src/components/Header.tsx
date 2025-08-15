@@ -10,26 +10,32 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 mb-8">
-      <div className="container mx-auto px-4 py-6">
+    <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-xl border-b border-orange-200 dark:border-gray-700 mb-12 sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-              🍳 Simple Recipe Finder
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-1">
-              Discover delicious recipes from around the world
-            </p>
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg">
+              <span className="text-2xl">🍳</span>
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                Delicious
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400 mt-1 font-medium">
+                Discover amazing recipes worldwide
+              </p>
+            </div>
           </div>
 
           <button
             onClick={toggleTheme}
-            className="p-3 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+            className="relative p-4 bg-gradient-to-br from-orange-100 to-red-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl hover:from-orange-200 hover:to-red-200 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
             aria-label="Toggle theme"
           >
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             {theme === "dark" ? (
               <svg
-                className="w-6 h-6 text-yellow-500"
+                className="w-6 h-6 text-yellow-500 relative z-10 transition-transform duration-300 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -37,7 +43,7 @@ export default function Header() {
               </svg>
             ) : (
               <svg
-                className="w-6 h-6 text-gray-700"
+                className="w-6 h-6 text-gray-700 relative z-10 transition-transform duration-300 group-hover:-rotate-12"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
