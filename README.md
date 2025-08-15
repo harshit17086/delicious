@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Recipe Finder 🍳
+
+A modern, responsive web application built with Next.js that allows users to search for recipes from TheMealDB API.
+
+## Features
+
+### Core Functionality
+
+- **Search Recipes**: Search by recipe name or ingredient
+- **Recipe Details**: View detailed information including ingredients and cooking instructions
+- **Responsive Design**: Optimized for both mobile and desktop devices
+- **Hover Effects**: Interactive recipe cards with smooth animations
+- **Loading Animation**: Beautiful loading spinner during API calls
+- **Error Handling**: User-friendly error messages
+
+### Advanced Features
+
+- **Favorites System**: Save and manage favorite recipes using LocalStorage
+- **Dark Mode**: Toggle between light and dark themes (persisted)
+- **Category Filters**: Filter recipes by meal type (Breakfast, Lunch, Dinner, etc.)
+- **YouTube Integration**: Watch cooking videos when available
+- **Ingredient Lists**: Properly formatted ingredient lists with measurements
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS 4
+- **API**: TheMealDB API
+- **Storage**: Browser LocalStorage for favorites and theme preference
+
+## Project Structure
+
+```
+src/
+├── app/                     # Next.js app directory
+│   ├── globals.css         # Global styles and Tailwind imports
+│   ├── layout.tsx          # Root layout component
+│   └── page.tsx            # Main homepage component
+├── components/             # Reusable React components
+│   ├── Header.tsx          # App header with theme toggle
+│   ├── SearchBar.tsx       # Recipe search functionality
+│   ├── FilterBar.tsx       # Category filters and favorites
+│   ├── RecipeCard.tsx      # Individual recipe card
+│   ├── RecipeModal.tsx     # Recipe details modal
+│   └── LoadingSpinner.tsx  # Loading animation
+├── hooks/                  # Custom React hooks
+│   ├── useFavorites.ts     # Favorites management
+│   └── useTheme.ts         # Theme management
+├── lib/                    # Utility libraries
+│   ├── api.ts              # TheMealDB API service
+│   └── storage.ts          # LocalStorage utilities
+└── types/                  # TypeScript type definitions
+    └── recipe.ts           # Recipe-related types
+```
+
+## Component Architecture
+
+### Reusable Components
+
+1. **SearchBar**: Handles recipe search with type selection (name/ingredient)
+2. **RecipeCard**: Displays recipe preview with favorite button and hover effects
+3. **FilterBar**: Category filters and favorites toggle
+4. **RecipeModal**: Full recipe details with ingredients and instructions
+5. **LoadingSpinner**: Custom loading animation
+6. **Header**: App branding with dark mode toggle
+
+### Custom Hooks
+
+- **useFavorites**: Manages favorite recipes state and LocalStorage persistence
+- **useTheme**: Handles dark/light mode toggle and persistence
+
+## API Integration
+
+Uses TheMealDB API endpoints:
+
+- Search by name: `/search.php?s={query}`
+- Search by ingredient: `/filter.php?i={ingredient}`
+- Get recipe details: `/lookup.php?i={id}`
+- Filter by category: `/filter.php?c={category}`
+
+## Styling & UX
+
+- **Responsive Grid**: Adaptive layout from 1 to 4 columns based on screen size
+- **Dark Mode**: Complete dark theme with smooth transitions
+- **Animations**: CSS animations for loading, card hover effects, and modal transitions
+- **Accessibility**: Proper ARIA labels, semantic HTML, and keyboard navigation
+- **Performance**: Lazy loading for images and optimized re-renders
 
 ## Getting Started
 
-First, run the development server:
+1. **Install Dependencies**:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run Development Server**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Open Application**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Search Recipes**: Use the search bar to find recipes by name or ingredient
+2. **Browse Categories**: Use filter buttons to browse specific meal types
+3. **View Details**: Click on any recipe card to see full details
+4. **Save Favorites**: Click the heart icon to save recipes to favorites
+5. **Toggle Theme**: Use the theme toggle in the header for dark/light mode
+6. **Watch Videos**: Click "Watch Video" in recipe details (when available)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features Implementation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ✅ HTML & CSS
 
-## Deploy on Vercel
+- Semantic HTML structure
+- Tailwind CSS for styling
+- Fully responsive design
+- Hover effects on recipe cards
+- Custom loading animations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✅ JavaScript & React Functionality
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Search bar with ingredient/dish name search
+- TheMealDB API integration
+- Recipe list with images and names
+- Detailed recipe view with ingredients and instructions
+- Error handling for failed searches
+
+### ✅ React Requirements
+
+- Functional components with hooks (useState, useEffect)
+- Reusable components (RecipeCard, SearchBar, etc.)
+- Clean folder structure with proper separation
+
+### ✅ Extra Features
+
+- Favorites system with LocalStorage
+- Dark mode toggle with persistence
+- Meal type filtering (Breakfast, Lunch, Dinner, etc.)
+- YouTube video integration
+- Smooth animations and transitions
+
+## Code Quality
+
+- **TypeScript**: Full type safety throughout the application
+- **Clean Code**: Well-commented and organized codebase
+- **Error Handling**: Comprehensive error handling and user feedback
+- **Performance**: Optimized API calls and state management
+- **Accessibility**: ARIA labels and semantic HTML structure
