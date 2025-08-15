@@ -65,19 +65,23 @@ export default function FilterBar({
           <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-red-500 rounded-full animate-pulse opacity-75"></div>
         )}
         <div className="relative z-10 flex items-center space-x-3">
-          <svg 
-            className={`w-5 h-5 transition-transform duration-200 ${showingFavorites ? 'scale-110' : ''}`} 
-            fill="currentColor" 
+          <svg
+            className={`w-5 h-5 transition-transform duration-200 ${
+              showingFavorites ? "scale-110" : ""
+            }`}
+            fill="currentColor"
             viewBox="0 0 24 24"
           >
             <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>
           <span>My Favorites</span>
-          <span className={`inline-flex items-center justify-center w-6 h-6 text-xs font-bold rounded-full ${
-            showingFavorites 
-              ? 'bg-white/30 text-white' 
-              : 'bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400'
-          }`}>
+          <span
+            className={`inline-flex items-center justify-center w-6 h-6 text-xs font-bold rounded-full ${
+              showingFavorites
+                ? "bg-white/30 text-white"
+                : "bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400"
+            }`}
+          >
             {favoritesCount}
           </span>
         </div>

@@ -7,8 +7,11 @@ export default function LoadingSpinner() {
           <div className="w-20 h-20 border-4 border-orange-200 dark:border-orange-800 rounded-full"></div>
           <div className="absolute top-0 left-0 w-20 h-20 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
           <div className="absolute top-2 left-2 w-16 h-16 border-4 border-red-200 dark:border-red-800 rounded-full"></div>
-          <div className="absolute top-2 left-2 w-16 h-16 border-4 border-red-400 border-t-transparent rounded-full animate-spin" style={{animationDirection: 'reverse', animationDuration: '1.5s'}}></div>
-          
+          <div
+            className="absolute top-2 left-2 w-16 h-16 border-4 border-red-400 border-t-transparent rounded-full animate-spin"
+            style={{ animationDirection: "reverse", animationDuration: "1.5s" }}
+          ></div>
+
           {/* Central cooking icon */}
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-2xl animate-bounce">🍳</span>
@@ -27,8 +30,14 @@ export default function LoadingSpinner() {
         {/* Loading dots */}
         <div className="flex space-x-2">
           <div className="w-3 h-3 bg-orange-400 rounded-full animate-bounce"></div>
-          <div className="w-3 h-3 bg-red-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-          <div className="w-3 h-3 bg-yellow-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+          <div
+            className="w-3 h-3 bg-red-400 rounded-full animate-bounce"
+            style={{ animationDelay: "0.1s" }}
+          ></div>
+          <div
+            className="w-3 h-3 bg-yellow-400 rounded-full animate-bounce"
+            style={{ animationDelay: "0.2s" }}
+          ></div>
         </div>
       </div>
     </div>
