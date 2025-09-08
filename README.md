@@ -41,7 +41,7 @@ src/
 │   ├── SearchBar.tsx       # Recipe search functionality
 │   ├── FilterBar.tsx       # Category filters and favorites
 │   ├── RecipeCard.tsx      # Individual recipe card
-│   ├── RecipeModal.tsx     # Recipe details modal
+│   ├── RecipeModal.tsx     # 
 │   └── LoadingSpinner.tsx  # Loading animation
 ├── hooks/                  # Custom React hooks
 │   ├── useFavorites.ts     # Favorites management
