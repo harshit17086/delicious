@@ -149,5 +149,5 @@ Uses TheMealDB API endpoints:
 - **TypeScript**: Full type safety throughout the application
 - **Clean Code**: Well-commented and organized codebase
 - **Error Handling**: Comprehensive error handling and user feedback
-- **Performance**: Optimized API calls and state management
+- **Performance**: Optimized API calls and state
 - **Accessibility**: ARIA labels and semantic HTML structure
