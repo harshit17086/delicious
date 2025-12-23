@@ -6,12 +6,7 @@ A modern, responsive web application built with Next.js that allows users to sea
 
 ### Core Functionality
 
-- **Search Recipes**: Search by recipe name or ingredient
-- **Recipe Details**: View detailed information including ingredients and cooking instructions
-- **Responsive Design**: Optimized for both mobile and desktop devices
-- **Hover Effects**: Interactive recipe cards with smooth animations
-- **Loading Animation**: Beautiful loading spinner during API calls
-- **Error Handling**: User-friendly error messages
+-g**: User-friendly error messages
 
 ### Advanced Features
 
